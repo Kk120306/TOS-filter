@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "TOS Word Filter for YouTube",
+  "version": "1.0",
+  "description": "Filters TOS words from YouTube captions.",
+  "permissions": [
+    "activeTab",
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.youtube.com/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
+  }
+}
